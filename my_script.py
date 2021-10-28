@@ -16,6 +16,7 @@ def main():
             # delete the input
             print(f"Deleting the input file: {input_f.name}")
             input_f.unlink(missing_ok=True)
+        print("Wrote output files")
     else:
         print(f"No input files to process")
 
