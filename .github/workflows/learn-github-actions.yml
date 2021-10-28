@@ -1,7 +1,8 @@
 name: learn-github-actions
-on: [push]
-branches-ignore:
-  - 'master'
+on: 
+  push:
+    branches-ignore:
+      - 'master'
 jobs:
   check-python-version:
     runs-on: ubuntu-latest
