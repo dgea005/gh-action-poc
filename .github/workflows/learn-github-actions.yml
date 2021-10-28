@@ -12,5 +12,9 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
-      - run: python -m pip install --upgrade pip
-      - run: python --version
+      - name: Setup
+        run: python -m pip install --upgrade pip
+      - run: | 
+          python my_script.py
+      - name: Push generated file
+        run: bash add_new_files_to_git.sh
