@@ -6,7 +6,7 @@ def main():
     pathlib.Path(current_dir/"templates").mkdir(parents=True, exist_ok=True)
     pathlib.Path(current_dir/"input").mkdir(parents=True, exist_ok=True)
     # check for files
-    new_files = [f for f in urrent_dir.glob('input/*') if f != "README.md"]
+    new_files = [f for f in current_dir.glob('input/*') if f != "README.md"]
     if len(new_files) > 0:
         print(f"No {len(new_files)} to process")
         for input_f in new_files:
