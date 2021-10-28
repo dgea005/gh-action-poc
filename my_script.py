@@ -4,6 +4,7 @@ import pathlib
 def main():
     current_dir = pathlib.Path(__file__).parent
     pathlib.Path(current_dir/"templates").mkdir(parents=True, exist_ok=True)
+    pathlib.Path(current_dir/"input").mkdir(parents=True, exist_ok=True)
     # check for files
     new_files = list(current_dir.glob('input/*'))
     if len(new_files) > 0:
