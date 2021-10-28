@@ -4,10 +4,15 @@ import pathlib
 def main():
     current_dir = pathlib.Path(__file__).parent
     pathlib.Path(current_dir/"templates").mkdir(parents=True, exist_ok=True)
-    with open(current_dir/"input/input.txt", "r") as f:
-        data = f.read()
-    with open(current_dir/"templates/my_file.txt", "w") as f:
-        f.write(data)
+    # check for files
+    new_files = list(current_dir.glob('input/*'))
+    for input_f in new_files:
+        data = input_f.read_text()
+        with open(current_dir/f"templates/{input_f.name}", "w") as f:
+            f.write(data)
+        # delete the input
+        print(f"Deleting the input file: {input_f.name}")
+        input_f.unlink(missing_ok=True)
 
 
 if __name__ == "__main__":
