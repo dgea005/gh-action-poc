@@ -1,7 +1,9 @@
 ##
+import pathlib
 
 def write_file_using_inputs():
-    with open("templates/my_file.txt", "w") as f:
+    current_dir = pathlib.Path(__file__).parent
+    with open(current_dir/"templates/my_file.txt", "w") as f:
         f.write("test")
 
 
