@@ -1,10 +1,10 @@
 name: learn-github-actions
 on: [push]
+branches-ignore:
+  - 'master'
 jobs:
-  branches-ignore:
-        - 'master'
-    check-python-version:
-      runs-on: ubuntu-latest
+  check-python-version:
+    runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
         - uses: actions/setup-python@v2
